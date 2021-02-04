@@ -90,11 +90,11 @@ client.on("ready", () => {
 });
 
 client.on("message", (msg) => {
-  if (message.content === "ping") {
-    message.send("pong");
-    message.channel.send("pong");
-    message.send(lesson(true));
-  }
+  // if (message.content === "ping") {
+  message.send("pong");
+  message.channel.send("pong");
+  message.send(lesson(true));
+  // }
 
   // if (msg.channel.id === "806946043899936799") {
   //   if (!message.content.startsWith(prefix) || message.author.bot) return;
