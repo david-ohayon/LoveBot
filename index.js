@@ -1,5 +1,18 @@
 require("dotenv").config();
-import {} from "./lessons.js";
+import {
+  hebrew,
+  gemara,
+  math,
+  english_nakar,
+  english_nourit,
+  programming,
+  history_itsik,
+  literature,
+  torah_dov,
+  history_tsipi,
+  torah_rabinak,
+  physics,
+} from "./lessons.js";
 const Discord = require("discord.js");
 
 const client = new Discord.Client();

@@ -29,3 +29,18 @@ const torah_rabinak =
 
 const physics =
   "https://zoom.us/j/98729071010?pwd=ajVBbU13bHBqdmhCemlqQWV2aEZFUT09";
+
+export {
+  hebrew,
+  gemara,
+  math,
+  english_nakar,
+  english_nourit,
+  programming,
+  history_itsik,
+  literature,
+  torah_dov,
+  history_tsipi,
+  torah_rabinak,
+  physics,
+};
