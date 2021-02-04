@@ -100,7 +100,7 @@ client.on("message", (msg) => {
       msg.reply("pong");
     }
 
-    if (command === "help") {
+    if (command === "pong") {
       if (args[1] === "hello") return msg.reply("Please specify a topic.");
       // command code
     }
