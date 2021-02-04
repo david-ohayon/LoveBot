@@ -1,0 +1,15 @@
+{
+  "name": "lovebot",
+  "version": "1.0.0",
+  "description": "LoveBot is a discord bot to find love",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Ohayon",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
+  }
+}
