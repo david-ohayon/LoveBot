@@ -4,7 +4,7 @@
   "description": "LoveBot is a discord bot to find love",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "index.js"
   },
   "author": "David Ohayon",
   "license": "ISC",
