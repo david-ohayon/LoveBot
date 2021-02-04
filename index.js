@@ -110,7 +110,9 @@ client.on("message", (msg) => {
     if (command === "lessons") {
       if (args[1] === "gr1") {
         // return msg.reply(lesson(true));
-        return msg.reply(date.getHours() + ":" + date.getMinutes());
+        return msg.reply(
+          date.getDate() + date.getHours() + ":" + date.getMinutes()
+        );
       } else if (args[1] === "gr2") {
         return msg.reply(lesson(false));
       } else {
