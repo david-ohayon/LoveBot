@@ -99,13 +99,13 @@ client.on("ready", () => {
 client.on("message", (msg) => {
   const args = msg.content.trim().split(/ +/g);
   const command = args[0].slice(prefix.length).toLowerCase();
-  var date =
+  var day =
     date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
 
   var time =
     date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
-  var dateTime = date + " " + time;
+  var dateTime = day + " " + time;
   msg.reply(dateTime);
 
   if (msg.channel.id === "806946043899936799") {
