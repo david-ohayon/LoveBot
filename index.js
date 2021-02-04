@@ -95,8 +95,9 @@ client.on("message", (msg) => {
   // }
   if (msg.channel.id === "806946043899936799") {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
-    if (msg.content.startsWith(prefix + "hello")) {
-      msg.reply("hello!");
+    if (msg.content.startsWith(`${prefix}lesson ${group}`)) {
+      msg.reply(group);
+      msg.channel.send(group);
     }
   }
   // if (msg.content.startsWith(`${prefix}lesson ${group}`)) {
