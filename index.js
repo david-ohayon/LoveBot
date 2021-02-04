@@ -97,24 +97,19 @@ client.on("message", (msg) => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
     if (command === "ping") {
-      msg.reply("pong");
+      msg.channel.send("pong");
     }
 
-    if (command === "pong") {
-      if (args[1] === "hello") return msg.reply("Please specify a topic.");
-      // command code
+    if (command === "lessons") {
+      if (args[1] === "gr1") {
+        return msg.reply(lesson(true));
+      } else if (args[1] === "gr2") {
+        return msg.reply(lesson(false));
+      } else {
+        msg.channel.send(`You need to write ${prefix}lesson gr1/gr2`);
+      }
     }
   }
-  // if (msg.content.startsWith(`${prefix}lesson ${group}`)) {
-  //   if (group === "gr1") {
-  //     msg.channel.send(lesson(true));
-  //   } else if (group === "gr2") {
-  //     msg.channel.send(lesson(false));
-  //   } else {
-  //     msg.channel.send(`You need to write ${prefix}lesson gr1/gr2`);
-  //   }
-  // }
-  // }
 });
 
 client.login(process.env.BOT_TOKEN);
