@@ -1,5 +1,5 @@
 require("dotenv").config();
-require("lessons");
+import {} from "./lessons.js";
 const Discord = require("discord.js");
 
 const client = new Discord.Client();
