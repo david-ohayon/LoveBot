@@ -93,21 +93,21 @@ client.on("msg", (msg) => {
   // if (msg.content === "ping") {
   //   msg.reply("Pong!");
   // }
-  if (msg.channel.id === "806946043899936799") {
-    if (!msg.content.startsWith(prefix) || msg.author.bot) return;
-    if (msg.content.startsWith(prefix + "hello")) {
-      msg.reply("hello!");
-    }
-    // if (msg.content.startsWith(`${prefix}lesson ${group}`)) {
-    //   if (group === "gr1") {
-    //     msg.channel.send(lesson(true));
-    //   } else if (group === "gr2") {
-    //     msg.channel.send(lesson(false));
-    //   } else {
-    //     msg.channel.send(`You need to write ${prefix}lesson gr1/gr2`);
-    //   }
-    // }
+  // if (msg.channel.id === "806946043899936799") {
+  if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+  if (msg.content.startsWith(prefix + "hello")) {
+    msg.reply("hello!");
   }
+  // if (msg.content.startsWith(`${prefix}lesson ${group}`)) {
+  //   if (group === "gr1") {
+  //     msg.channel.send(lesson(true));
+  //   } else if (group === "gr2") {
+  //     msg.channel.send(lesson(false));
+  //   } else {
+  //     msg.channel.send(`You need to write ${prefix}lesson gr1/gr2`);
+  //   }
+  // }
+  // }
 });
 
 client.login(process.env.BOT_TOKEN);
