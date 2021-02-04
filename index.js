@@ -1,18 +1,5 @@
 require("dotenv").config();
-import {
-  hebrew,
-  gemara,
-  math,
-  english_nakar,
-  english_nourit,
-  programming,
-  history_itsik,
-  literature,
-  torah_dov,
-  history_tsipi,
-  torah_rabinak,
-  physics,
-} from "./lessons.js";
+const lessons = require("./lessons");
 const Discord = require("discord.js");
 
 const client = new Discord.Client();
@@ -31,65 +18,65 @@ const lesson = (my_group) => {
     //sunday
     case 0:
       if (hours >= "08:30" && hours < "10:15") {
-        my_group ? hebrew : gemara;
+        my_group ? lessons.hebrew : lessons.gemara;
       } else if (hours >= "10:15" && hours < "12:00") {
-        my_group ? gemara : hebrew;
+        my_group ? lessons.gemara : lessons.hebrew;
       } else if (hours >= "12:00" && hours < "14:00") {
-        return math;
+        return lessons.math;
       } else if (hours >= "14:00" && hours < "16:00") {
-        my_group ? english_nakar : english_nourit;
+        my_group ? lessons.english_nakar : lessons.english_nourit;
       } else if (hours >= "16:00" && hours <= "18:40") {
-        return programming;
+        return lessons.programming;
       }
       break;
     //monday
     case 1:
       if (hours >= "08:30" && hours < "10:15") {
-        return gemara;
+        return lessons.gemara;
       } else if (hours >= "10:15" && hours < "11:15") {
-        return history_itsik;
+        return lessons.history_itsik;
       } else if (hours >= "11:15" && hours < "12:00") {
-        return literature;
+        return lessons.literature;
       } else if (hours >= "12:00" && hours < "13:15") {
-        return torah_dov;
+        return lessons.torah_dov;
       } else if (hours >= "13:15" && hours < "14:0") {
-        my_group ? english_nakar : english_nourit;
+        my_group ? lessons.english_nakar : lessons.english_nourit;
       } else if (hours >= "16:00" && hours <= "18:40") {
-        return programming;
+        return lessons.programming;
       }
       break;
     //tuesday
     case 2:
       if (hours >= "08:30" && hours < "9:30") {
-        my_group ? history_tsipi : history_itsik;
+        my_group ? lessons.history_tsipi : lessons.history_itsik;
       } else if (hours >= "9:30" && hours < "10:15") {
-        my_group ? torah_rabinak : history_tsipi;
+        my_group ? lessons.torah_rabinak : lessons.history_tsipi;
       } else if (hours >= "10:15" && hours < "11:15") {
-        my_group ? history_itsik : torah_rabinak;
+        my_group ? lessons.history_itsik : lessons.torah_rabinak;
       } else if (hours >= "12:00" && hours < "16:00") {
-        return physics;
+        return lessons.physics;
       }
       break;
     //wednesday
     case 3:
       if (hours >= "08:30" && hours < "10:15") {
-        return math;
+        return lessons.math;
       } else if (hours >= "10:15" && hours < "11:15") {
-        return literature;
+        return lessons.literature;
       } else if (hours >= "11:15" && hours < "12:00") {
-        return gemara;
+        return lessons.gemara;
       } else if (hours >= "12:00" && hours < "16:00") {
-        return programming;
+        return lessons.programming;
       }
       break;
     //thursday
     case 4:
       if (hours >= "09:30" && hours < "10:15") {
-        return gemara;
+        return lessons.gemara;
       } else if (hours >= "10:15" && hours < "11:15") {
-        return history_itsik;
+        return lessons.history_itsik;
       } else if (hours >= "12:00" && hours <= "16:00") {
-        return physics;
+        return lessons.physics;
       }
       break;
     // no class
