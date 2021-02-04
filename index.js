@@ -90,19 +90,19 @@ client.on("ready", () => {
 });
 
 client.on("message", (msg) => {
-  const args = msg.content.slice(prefix.length).trim().split(/ +/);
+  const args = msg.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
   if (msg.channel.id === "806946043899936799") {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
-    if (command === "args-info") {
-      if (!args.length) {
-        return message.channel.send(
-          `You didn't provide any arguments, ${message.author}!`
-        );
-      }
 
-      message.channel.send(`Command name: ${command}\nArguments: ${args}`);
+    if (command === "ping") {
+      msg.reply("pong");
+    }
+
+    if (command === "help") {
+      if (args[1] === "hello") return msg.reply("Please specify a topic.");
+      // command code
     }
   }
   // if (msg.content.startsWith(`${prefix}lesson ${group}`)) {
