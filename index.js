@@ -17,68 +17,75 @@ const lesson = (my_group) => {
   switch (date.getDay()) {
     //sunday
     case 0:
-      if (hours >= "08:30" && hours < "10:15") {
-        my_group ? lessons.hebrew : lessons.gemara;
-      } else if (hours >= "10:15" && hours < "12:00") {
-        my_group ? lessons.gemara : lessons.hebrew;
-      } else if (hours >= "12:00" && hours < "14:00") {
-        return lessons.math;
-      } else if (hours >= "14:00" && hours < "16:00") {
-        my_group ? lessons.english_nakar : lessons.english_nourit;
-      } else if (hours >= "16:00" && hours <= "18:40") {
-        return lessons.programming;
-      }
-      break;
+      return "0";
+    // if (hours >= "08:30" && hours < "10:15") {
+    //   my_group ? lessons.hebrew : lessons.gemara;
+    // } else if (hours >= "10:15" && hours < "12:00") {
+    //   my_group ? lessons.gemara : lessons.hebrew;
+    // } else if (hours >= "12:00" && hours < "14:00") {
+    //   return lessons.math;
+    // } else if (hours >= "14:00" && hours < "16:00") {
+    //   my_group ? lessons.english_nakar : lessons.english_nourit;
+    // } else if (hours >= "16:00" && hours <= "18:40") {
+    //   return lessons.programming;
+    // }
+    // break;
     //monday
     case 1:
-      if (hours >= "08:30" && hours < "10:15") {
-        return lessons.gemara;
-      } else if (hours >= "10:15" && hours < "11:15") {
-        return lessons.history_itsik;
-      } else if (hours >= "11:15" && hours < "12:00") {
-        return lessons.literature;
-      } else if (hours >= "12:00" && hours < "13:15") {
-        return lessons.torah_dov;
-      } else if (hours >= "13:15" && hours < "14:0") {
-        my_group ? lessons.english_nakar : lessons.english_nourit;
-      } else if (hours >= "16:00" && hours <= "18:40") {
-        return lessons.programming;
-      }
-      break;
+      return "1";
+    // if (hours >= "08:30" && hours < "10:15") {
+    //   return lessons.gemara;
+    // } else if (hours >= "10:15" && hours < "11:15") {
+    //   return lessons.history_itsik;
+    // } else if (hours >= "11:15" && hours < "12:00") {
+    //   return lessons.literature;
+    // } else if (hours >= "12:00" && hours < "13:15") {
+    //   return lessons.torah_dov;
+    // } else if (hours >= "13:15" && hours < "14:0") {
+    //   my_group ? lessons.english_nakar : lessons.english_nourit;
+    // } else if (hours >= "16:00" && hours <= "18:40") {
+    //   return lessons.programming;
+    // }
+    // break;
     //tuesday
     case 2:
-      if (hours >= "08:30" && hours < "9:30") {
-        my_group ? lessons.history_tsipi : lessons.history_itsik;
-      } else if (hours >= "9:30" && hours < "10:15") {
-        my_group ? lessons.torah_rabinak : lessons.history_tsipi;
-      } else if (hours >= "10:15" && hours < "11:15") {
-        my_group ? lessons.history_itsik : lessons.torah_rabinak;
-      } else if (hours >= "12:00" && hours < "16:00") {
-        return lessons.physics;
-      }
-      break;
+      return "2";
+    // if (hours >= "08:30" && hours < "9:30") {
+    //   my_group ? lessons.history_tsipi : lessons.history_itsik;
+    // } else if (hours >= "9:30" && hours < "10:15") {
+    //   my_group ? lessons.torah_rabinak : lessons.history_tsipi;
+    // } else if (hours >= "10:15" && hours < "11:15") {
+    //   my_group ? lessons.history_itsik : lessons.torah_rabinak;
+    // } else if (hours >= "12:00" && hours < "16:00") {
+    //   return lessons.physics;
+    // }
+    // break;
     //wednesday
     case 3:
-      if (hours >= "08:30" && hours < "10:15") {
-        return lessons.math;
-      } else if (hours >= "10:15" && hours < "11:15") {
-        return lessons.literature;
-      } else if (hours >= "11:15" && hours < "12:00") {
-        return lessons.gemara;
-      } else if (hours >= "12:00" && hours < "16:00") {
-        return lessons.programming;
-      }
-      break;
+      return "3";
+    // if (hours >= "08:30" && hours < "10:15") {
+    //   return lessons.math;
+    // } else if (hours >= "10:15" && hours < "11:15") {
+    //   return lessons.literature;
+    // } else if (hours >= "11:15" && hours < "12:00") {
+    //   return lessons.gemara;
+    // } else if (hours >= "12:00" && hours < "16:00") {
+    //   return lessons.programming;
+    // }
+    // break;
     //thursday
     case 4:
-      if (hours >= "09:30" && hours < "10:15") {
-        return lessons.gemara;
-      } else if (hours >= "10:15" && hours < "11:15") {
-        return lessons.history_itsik;
-      } else if (hours >= "12:00" && hours <= "16:00") {
-        return lessons.physics;
-      }
-      break;
+      return "4";
+    // if (hours >= "09:30" && hours < "10:15") {
+    //   return lessons.gemara;
+    // } else if (hours >= "10:15" && hours < "11:15") {
+    //   return lessons.history_itsik;
+    // } else if (hours >= "12:00" && hours <= "16:00") {
+    //   return lessons.physics;
+    // }
+    // break;
+    case 5:
+      return "5";
     // no class
     default:
       return "No class for now";
