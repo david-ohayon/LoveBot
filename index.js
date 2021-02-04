@@ -5,18 +5,84 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 const prefix = "!";
+const group = "";
 
 // get which current lesson there is
 const date = new Date();
-
-sunday = date.getDay() == 0;
-monday = date.getDay() == 1;
-tuesday = date.getDay() == 2;
-wednesday = date.getDay() == 3;
-thursday = date.getDay() == 4;
-
-const lesson = () => {
-  lessons = {};
+const hours = date.toLocaleTimeString([], {
+  hour: "2-digit",
+  minute: "2-digit",
+});
+const lesson = (my_group) => {
+  switch (date.getDay()) {
+    //sunday
+    case 0:
+      if (hours >= "08:30" && hours < "10:15") {
+        my_group ? hebrew : gemara;
+      } else if (hours >= "10:15" && hours < "12:00") {
+        my_group ? gemara : hebrew;
+      } else if (hours >= "12:00" && hours < "14:00") {
+        return math;
+      } else if (hours >= "14:00" && hours < "16:00") {
+        my_group ? english_nakar : english_nourit;
+      } else if (hours >= "16:00" && hours <= "18:40") {
+        return programming;
+      }
+      break;
+    //monday
+    case 1:
+      if (hours >= "08:30" && hours < "10:15") {
+        return gemara;
+      } else if (hours >= "10:15" && hours < "11:15") {
+        return history_itsik;
+      } else if (hours >= "11:15" && hours < "12:00") {
+        return literature;
+      } else if (hours >= "12:00" && hours < "13:15") {
+        return torah_dov;
+      } else if (hours >= "13:15" && hours < "14:0") {
+        my_group ? english_nakar : english_nourit;
+      } else if (hours >= "16:00" && hours <= "18:40") {
+        return programming;
+      }
+      break;
+    //tuesday
+    case 2:
+      if (hours >= "08:30" && hours < "9:30") {
+        my_group ? history_tsipi : history_itsik;
+      } else if (hours >= "9:30" && hours < "10:15") {
+        my_group ? torah_rabinak : history_tsipi;
+      } else if (hours >= "10:15" && hours < "11:15") {
+        my_group ? history_itsik : torah_rabinak;
+      } else if (hours >= "12:00" && hours < "16:00") {
+        return physics;
+      }
+      break;
+    //wednesday
+    case 3:
+      if (hours >= "08:30" && hours < "10:15") {
+        return math;
+      } else if (hours >= "10:15" && hours < "11:15") {
+        return literature;
+      } else if (hours >= "11:15" && hours < "12:00") {
+        return gemara;
+      } else if (hours >= "12:00" && hours < "16:00") {
+        return programming;
+      }
+      break;
+    //thursday
+    case 4:
+      if (hours >= "09:30" && hours < "10:15") {
+        return gemara;
+      } else if (hours >= "10:15" && hours < "11:15") {
+        return history_itsik;
+      } else if (hours >= "12:00" && hours <= "16:00") {
+        return physics;
+      }
+      break;
+    // no class
+    default:
+      return "No class for now";
+  }
 };
 
 client.on("ready", () => {
@@ -26,8 +92,14 @@ client.on("ready", () => {
 client.on("message", (msg) => {
   if (msg.channel.id === "805852579161833572") {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
-    if (message.content.startsWith(`${prefix}lesson`)) {
-      message.channel.send(lesson());
+    if (message.content.startsWith(`${prefix}lesson ${group}`)) {
+      if (group === "gr1") {
+        message.channel.send(lesson(true));
+      } else if (group === "gr2") {
+        message.channel.send(lesson(false));
+      } else {
+        message.channel.send(`You need to write ${prefix}lesson gr1/gr2`);
+      }
     }
   }
 });
