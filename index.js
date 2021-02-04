@@ -106,6 +106,7 @@ client.on("message", (msg) => {
     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
   var dateTime = date + " " + time;
+  msg.reply(dateTime);
 
   if (msg.channel.id === "806946043899936799") {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
@@ -116,8 +117,7 @@ client.on("message", (msg) => {
 
     if (command === "lessons") {
       if (args[1] === "gr1") {
-        // return msg.reply(lesson(true));
-        return msg.reply(dateTime);
+        return msg.reply(lesson(true));
       } else if (args[1] === "gr2") {
         return msg.reply(lesson(false));
       } else {
