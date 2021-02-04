@@ -90,6 +90,7 @@ client.on("ready", () => {
 });
 
 client.on("message", (msg) => {
+  message.channel.send(msg);
   if (msg.channel.id === "806946043899936799") {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     if (message.content.startsWith(`${prefix}lesson ${group}`)) {
