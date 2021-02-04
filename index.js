@@ -90,8 +90,8 @@ client.on("ready", () => {
 });
 
 client.on("message", (msg) => {
-  const args = msg.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
+  const args = msg.content.trim().split(/ +/g);
+  const command = args[0].slice(prefix.length).toLowerCase();
 
   if (msg.channel.id === "806946043899936799") {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
