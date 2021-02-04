@@ -95,7 +95,7 @@ client.on("message", (msg) => {
 
   if (msg.channel.id === "806946043899936799") {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
-    else if (command === "args-info") {
+    if (command === "args-info") {
       if (!args.length) {
         return message.channel.send(
           `You didn't provide any arguments, ${message.author}!`
