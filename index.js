@@ -90,19 +90,22 @@ client.on("ready", () => {
 });
 
 client.on("message", (msg) => {
-  if (msg.channel.id === "806946043899936799") {
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
-    if (message.content === "ping") message.channel.send(lesson(true));
-    if (message.content.startsWith(`${prefix}lesson ${group}`)) {
-      if (group === "gr1") {
-        message.channel.send(lesson(true));
-      } else if (group === "gr2") {
-        message.channel.send(lesson(false));
-      } else {
-        message.channel.send(`You need to write ${prefix}lesson gr1/gr2`);
-      }
-    }
+  if (message.content === "ping") {
+    message.channel.send(lesson(true));
   }
+
+  // if (msg.channel.id === "806946043899936799") {
+  //   if (!message.content.startsWith(prefix) || message.author.bot) return;
+  //   if (message.content.startsWith(`${prefix}lesson ${group}`)) {
+  //     if (group === "gr1") {
+  //       message.channel.send(lesson(true));
+  //     } else if (group === "gr2") {
+  //       message.channel.send(lesson(false));
+  //     } else {
+  //       message.channel.send(`You need to write ${prefix}lesson gr1/gr2`);
+  //     }
+  //   }
+  // }
 });
 
 client.login(process.env.BOT_TOKEN);
