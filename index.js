@@ -12,34 +12,42 @@ const prefix = "!";
 // get which current lesson there is
 const day = dayjs().format("dddd");
 const hours = dayjs().format("HH:mm");
-const lesson = (my_group) => {
+const lesson = (my_group = "gr1") => {
   switch (day) {
     //sunday
     case "Sunday":
       if (hours >= "08:30" && hours < "10:15") {
-        return my_group ? lessons.hebrew : lessons.gemara;
+        return my_group
+          ? `${lessons.hebrew} עברית:`
+          : `${lessons.gemara} תלמוד:`;
       } else if (hours >= "10:15" && hours < "12:00") {
-        return my_group ? lessons.gemara : lessons.hebrew;
+        return my_group
+          ? `${lessons.gemara} תלמוד:`
+          : `${lessons.hebrew} עברית:`;
       } else if (hours >= "12:00" && hours < "14:00") {
-        return lessons.math;
+        return `${lessons.math} מתמטיקה(5):`;
       } else if (hours >= "14:00" && hours < "16:00") {
-        return my_group ? lessons.english_nakar : lessons.english_nourit;
+        return my_group
+          ? `${lessons.english_nakar} :אנגלית(5-א) נקאר מרים`
+          : `${lessons.english_nourit} :אנגלית(5-ב) פריד נורית`;
       } else if (hours >= "16:00" && hours <= "18:40") {
-        return lessons.programming;
+        return `${lessons.programming} מדמ"ח(5):`;
       }
       break;
     //monday
     case "Monday":
       if (hours >= "08:30" && hours < "10:15") {
-        return lessons.gemara;
+        return `${lessons.gemara} תלמוד:`;
       } else if (hours >= "10:15" && hours < "11:15") {
-        return lessons.history_itsik;
+        return `${lessons.history_itsik} היסטוריה הרב שמש:`;
       } else if (hours >= "11:15" && hours < "12:00") {
-        return lessons.literature;
+        return `${lessons.literature} ספרות:`;
       } else if (hours >= "12:00" && hours < "13:15") {
-        return lessons.torah_dov;
+        return `${lessons.torah_dov} :תנ"ך הרב דב`;
       } else if (hours >= "13:15" && hours < "14:0") {
-        return my_group ? lessons.english_nakar : lessons.english_nourit;
+        return my_group
+          ? `${lessons.english_nakar} :אנגלית(5-א) נקאר מרים`
+          : `${lessons.english_nourit}`;
       } else if (hours >= "16:00" && hours <= "18:40") {
         return lessons.programming;
       }
@@ -78,15 +86,6 @@ const lesson = (my_group) => {
         return lessons.physics;
       }
       break;
-    case "Friday":
-      if (hours >= "09:30" && hours < "10:15") {
-        return lessons.gemara;
-      } else if (hours >= "10:15" && hours < "11:15") {
-        return lessons.history_itsik;
-      } else if (hours >= "12:00" && hours <= "16:00") {
-        return lessons.gemara;
-      }
-      break;
     // no class
     default:
       return "No class for now";
@@ -99,7 +98,7 @@ client.on("ready", () => {
 
 client.on("message", (msg) => {
   const args = msg.content.trim().split(/ +/g);
-  const command = args[0].slice(prefix.length).toLowerCase();
+  const cmd = args[0].slice(prefix.length).toLowerCase();
 
   if (
     msg.channel.id === "806946043899936799" ||
@@ -107,18 +106,25 @@ client.on("message", (msg) => {
   ) {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
-    if (command === "ping") {
+    if (cmd === "lessons" || cmd === "classes" || cmd === "שיעורים") {
       msg.channel.send("pong");
     }
 
-    if (command === "lesson") {
-      if (args[1] === "gr1") {
-        return msg.reply(lesson(true));
-      } else if (args[1] === "gr2") {
-        return msg.reply(lesson(false));
-      } else {
-        msg.channel.send(`You need to write ${prefix}lesson gr1/gr2`);
+    if (cmd === "lesson" || cmd === "class" || cmd === "שיעור") {
+      if (msg.author.id === "448837722778632192") {
+        msg.reply("pipi");
+      } else if (msg.author.id === "801106605658865705") {
+        msg.reply("caca");
       }
+      // if (args[1] === "gr1") {
+      //   return msg.reply(lesson(true));
+      // } else if (args[1] === "gr2") {
+      //   return msg.reply(lesson(false));
+      // } else {
+      //   msg.channel.send(
+      //     `You need to write ${prefix}lesson/class/שיעור gr1/gr2`
+      //   );
+      // }
     }
   }
 });
