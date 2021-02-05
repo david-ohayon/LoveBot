@@ -1,3 +1,9 @@
+const lessons = require("./lessons");
+const dayjs = require("dayjs");
+
+const day = dayjs().format("dddd");
+const hours = dayjs().format("HH:mm");
+
 // lesson links
 module.exports = {
   hebrew:
@@ -29,4 +35,85 @@ module.exports = {
     "https://edu-il.zoom.us/j/3422464676?pwd:aUlOWFFjUEx0ak5yalFpTjBHdU1Xdz09",
 
   physics: "https://zoom.us/j/98729071010?pwd:ajVBbU13bHBqdmhCemlqQWV2aEZFUT09",
+
+  lesson: (my_group) => {
+    switch (day) {
+      //sunday
+      case "Sunday":
+        if (hours >= "08:30" && hours < "10:15") {
+          return my_group ? lessons.hebrew : lessons.gemara;
+        } else if (hours >= "10:15" && hours < "12:00") {
+          return my_group ? lessons.gemara : lessons.hebrew;
+        } else if (hours >= "12:00" && hours < "14:00") {
+          return lessons.math;
+        } else if (hours >= "14:00" && hours < "16:00") {
+          return my_group ? lessons.english_nakar : lessons.english_nourit;
+        } else if (hours >= "16:00" && hours <= "18:40") {
+          return lessons.programming;
+        }
+        break;
+      //monday
+      case "Monday":
+        if (hours >= "08:30" && hours < "10:15") {
+          return lessons.gemara;
+        } else if (hours >= "10:15" && hours < "11:15") {
+          return lessons.history_itsik;
+        } else if (hours >= "11:15" && hours < "12:00") {
+          return lessons.literature;
+        } else if (hours >= "12:00" && hours < "13:15") {
+          return lessons.torah_dov;
+        } else if (hours >= "13:15" && hours < "14:0") {
+          return my_group ? lessons.english_nakar : lessons.english_nourit;
+        } else if (hours >= "16:00" && hours <= "18:40") {
+          return lessons.programming;
+        }
+        break;
+      //tuesday
+      case "Tuesday":
+        if (hours >= "08:30" && hours < "9:30") {
+          return my_group ? lessons.history_tsipi : lessons.history_itsik;
+        } else if (hours >= "9:30" && hours < "10:15") {
+          return my_group ? lessons.torah_rabinak : lessons.history_tsipi;
+        } else if (hours >= "10:15" && hours < "11:15") {
+          return my_group ? lessons.history_itsik : lessons.torah_rabinak;
+        } else if (hours >= "12:00" && hours < "16:00") {
+          return lessons.physics;
+        }
+        break;
+      //wednesday
+      case "Wednesday":
+        if (hours >= "08:30" && hours < "10:15") {
+          return lessons.math;
+        } else if (hours >= "10:15" && hours < "11:15") {
+          return lessons.literature;
+        } else if (hours >= "11:15" && hours < "12:00") {
+          return lessons.gemara;
+        } else if (hours >= "12:00" && hours < "16:00") {
+          return lessons.programming;
+        }
+        break;
+      //thursday
+      case "Thursday":
+        if (hours >= "09:30" && hours < "10:15") {
+          return lessons.gemara;
+        } else if (hours >= "10:15" && hours < "11:15") {
+          return lessons.history_itsik;
+        } else if (hours >= "12:00" && hours <= "16:00") {
+          return lessons.physics;
+        }
+        break;
+      case "Friday":
+        if (hours >= "09:30" && hours < "10:15") {
+          return lessons.gemara;
+        } else if (hours >= "10:15" && hours < "11:15") {
+          return lessons.history_itsik;
+        } else if (hours >= "12:00" && hours <= "16:00") {
+          return lessons.physics;
+        }
+        break;
+      // no class
+      default:
+        return "No class for now";
+    }
+  },
 };
