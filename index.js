@@ -84,7 +84,7 @@ const lesson = (my_group) => {
       } else if (hours >= "10:15" && hours < "11:15") {
         return lessons.history_itsik;
       } else if (hours >= "12:00" && hours <= "16:00") {
-        return lessons.physics;
+        return lessons.gemara;
       }
       break;
     // no class
