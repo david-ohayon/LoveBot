@@ -153,7 +153,7 @@ client.on("message", (msg) => {
     if (cmd === "lesson" || cmd === "class" || cmd === "שיעור") {
       if (msg.author.id === "448837722778632192") {
         // david
-        msg.reply(lesson(1, "b", "a", "b"));
+        msg.reply(lesson(1, "a", "a", "a"));
       } else if (msg.author.id === "435508604489957377") {
         // mendel
         msg.reply(lesson(1, "b", "a", "b"));
