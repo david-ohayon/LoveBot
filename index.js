@@ -23,9 +23,9 @@ const lesson = (grade, sunday_group, tuesday_group, english_group) => {
       if (hours >= "08:30" && hours < "10:15") {
         if (grade === 1) {
           if (sunday_group === "a") {
-            return `${lessons.hebrew} עברית:`;
+            return `${lessons.hebrew} :עברית`;
           } else if (sunday_group === "b") {
-            return `${lessons.gemara} תלמוד:`;
+            return `${lessons.gemara} :תלמוד`;
           }
         } else if (grade === 2) {
           if (sunday_group === "a") {
@@ -37,9 +37,9 @@ const lesson = (grade, sunday_group, tuesday_group, english_group) => {
       } else if (hours >= "10:15" && hours < "12:00") {
         if (grade === 1) {
           if (sunday_group === "a") {
-            return `${lessons.gemara} תלמוד:`;
+            return `${lessons.gemara} :תלמוד`;
           } else if (sunday_group === "b") {
-            return `${lessons.hebrew} עברית:`;
+            return `${lessons.hebrew} :עברית`;
           }
         } else if (grade === 2) {
           if (sunday_group === "a") {
@@ -50,7 +50,7 @@ const lesson = (grade, sunday_group, tuesday_group, english_group) => {
         }
       } else if (hours >= "12:00" && hours < "14:00") {
         if (grade === 1) {
-          return `${lessons.math} מתמטיקה(5):`;
+          return `${lessons.math} :מתמטיקה(5)`;
         } else if (grade === 2) {
           return;
         }
@@ -62,7 +62,7 @@ const lesson = (grade, sunday_group, tuesday_group, english_group) => {
         }
       } else if (hours >= "16:00" && hours <= "18:40") {
         if (grade === 1) {
-          return `${lessons.programming} מדמ"ח(5):`;
+          return `${lessons.programming} :מדמ"ח(5)`;
         }
       }
       break;
@@ -70,7 +70,7 @@ const lesson = (grade, sunday_group, tuesday_group, english_group) => {
     case "Monday":
       if (hours >= "08:30" && hours < "10:15") {
         if (grade === 1) {
-          return `${lessons.gemara} תלמוד:`;
+          return `${lessons.gemara} :תלמוד`;
         } else if (grade === 2) {
           return;
         }
@@ -81,7 +81,7 @@ const lesson = (grade, sunday_group, tuesday_group, english_group) => {
           return;
         }
       } else if (hours >= "11:15" && hours < "12:00") {
-        return `${lessons.literature} ספרות:`;
+        return `${lessons.literature} :ספרות`;
       } else if (hours >= "12:00" && hours < "13:15") {
         return `${lessons.torah_dov} :תנ"ך הרב דב`;
       } else if (hours >= "13:15" && hours < "14:0") {
@@ -139,7 +139,7 @@ client.on("ready", () => {
 client.on("message", (msg) => {
   const args = msg.content.trim().split(/ +/g);
   const cmd = args[0].slice(prefix.length).toLowerCase();
-  msg.reply(lesson(1, "b", "a", "b"));
+
   if (
     msg.channel.id === "806946043899936799" ||
     msg.channel.id === "806978215955398669"
