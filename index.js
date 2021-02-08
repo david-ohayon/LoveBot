@@ -16,7 +16,8 @@ const lesson = (
   tuesday_group,
   english_group,
   option,
-  cs
+  cs,
+  poop
 ) => {
   const day = dayjs().format("dddd");
   const hours = `${parseInt(dayjs().format("HH")) + 2}:${dayjs().format("mm")}`;
@@ -24,6 +25,7 @@ const lesson = (
   // sunday_group - kapsula be rishon
   // tuesday_group - kapsula be shlishi
   // english_group - nakar / nourit
+  if (poop === 1) return `${day} ${hours}`;
   switch (day) {
     //sunday
     case "Sunday":
@@ -174,19 +176,19 @@ client.on("message", (msg) => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
     if (cmd === "lessons" || cmd === "classes" || cmd === "שיעורים") {
-      msg.channel.send(`${day} ${hours}`);
+      msg.channel.send(lesson(1, "a", "a", "a", "a", 1, 1));
     }
 
     if (cmd === "lesson" || cmd === "class" || cmd === "שיעור") {
       if (msg.author.id === "448837722778632192") {
         // david
-        msg.reply(lesson(1, "a", "a", "a", "a", 1));
+        msg.reply(lesson(1, "a", "a", "a", "a", 1, 1));
       } else if (msg.author.id === "435508604489957377") {
         // mendel
-        msg.reply(lesson(1, "b", "a", "b", "a", 1));
+        msg.reply(lesson(1, "b", "a", "b", "a", 1, 1));
       } else if (msg.author.id === "801106605658865705") {
         // daniel
-        msg.reply(lesson(1, "b", "b", "b", "a", 1));
+        msg.reply(lesson(1, "b", "b", "b", "a", 1), 1);
       }
       // if (args[1] === "gr1")
     }
