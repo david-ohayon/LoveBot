@@ -191,7 +191,7 @@ client.on("message", (msg) => {
         msg.reply(lesson(1, "b", "b", "b", "a", 1));
       }
       if (msg.author.id === "807289297836834907") {
-        msg.reply(lesson(1, "a", "a", "a", "a", 1));
+        msg.reply(lesson(1, "b", "b", "b", "a", 1));
       }
       // if (args[1] === "gr1")
     }
