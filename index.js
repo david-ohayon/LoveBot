@@ -93,7 +93,7 @@ const lesson = (
         return `${lessons.torah_dov} :תנ"ך הרב דב`;
       } else if (hours >= "13:15" && hours < "14:0") {
         if (english_group === "a") {
-          return `${lessons.english_nakar} :אנגלית(5-א) נקאר מרים asdsaf`;
+          return `${lessons.english_nakar} :אנגלית(5-א) נקאר מרים`;
         } else if (english_group === "b") {
           `${lessons.english_nourit} :אנגלית(5-ב) פריד נורית`;
         }
@@ -191,7 +191,7 @@ client.on("message", (msg) => {
         msg.reply(lesson(1, "b", "b", "b", "a", 1));
       }
       if (msg.author.id === "807289297836834907") {
-        msg.reply(lesson(1, "b", "b", "b", "a", 1));
+        msg.reply(lesson(1, "a", "a", "b", "a", 1));
       }
       // if (args[1] === "gr1")
     }
