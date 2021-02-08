@@ -144,6 +144,9 @@ client.on("message", (msg) => {
     msg.channel.id === "806946043899936799" ||
     msg.channel.id === "807571643546992692"
   ) {
+    if (msg.content === "ping") {
+      msg.reply("Pong!");
+    }
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
     if (cmd === "lessons" || cmd === "classes" || cmd === "שיעורים") {
