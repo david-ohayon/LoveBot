@@ -139,7 +139,7 @@ client.on("ready", () => {
 client.on("message", (msg) => {
   const args = msg.content.trim().split(/ +/g);
   const cmd = args[0].slice(prefix.length).toLowerCase();
-
+  msg.reply(lesson(1, "b", "a", "b"));
   if (
     msg.channel.id === "806946043899936799" ||
     msg.channel.id === "806978215955398669"
