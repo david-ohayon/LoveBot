@@ -36,9 +36,9 @@ const lesson = (
           }
         } else if (grade === 2) {
           if (sunday_group === "a") {
-            return ``;
+            return `wait`;
           } else if (sunday_group === "b") {
-            return ``;
+            return `wait`;
           }
         }
       } else if (hours >= "10:15" && hours < "12:00") {
@@ -50,16 +50,16 @@ const lesson = (
           }
         } else if (grade === 2) {
           if (sunday_group === "a") {
-            return ``;
+            return `wait`;
           } else if (sunday_group === "b") {
-            return ``;
+            return `wait`;
           }
         }
       } else if (hours >= "12:00" && hours < "14:00") {
         if (grade === 1) {
           return `${lessons.math} :מתמטיקה(5)`;
         } else if (grade === 2) {
-          return ``;
+          return `wait`;
         }
       } else if (hours >= "14:00" && hours < "16:00") {
         if (english_group === "a") {
@@ -79,13 +79,13 @@ const lesson = (
         if (grade === 1) {
           return `${lessons.gemara} :תלמוד`;
         } else if (grade === 2) {
-          return ``;
+          return `wait`;
         }
       } else if (hours >= "10:15" && hours < "11:15") {
         if (grade === 1) {
           return `${lessons.history_itsik} :היסטוריה הרב שמש`;
         } else if (grade === 2) {
-          return ``;
+          return `wait`;
         }
       } else if (hours >= "11:15" && hours < "12:00") {
         return `${lessons.literature} :ספרות`;
@@ -127,7 +127,7 @@ const lesson = (
         if (option === "a") {
           return `${lessons.physics}`;
         } else if (options === "b") {
-          return ``;
+          return `wait`;
         }
       }
       break;
@@ -181,14 +181,17 @@ client.on("message", (msg) => {
       if (msg.author.id === "448837722778632192") {
         // david
         msg.reply(lesson(1, "a", "a", "a", "a", 1));
-      } else if (msg.author.id === "435508604489957377") {
+      }
+      if (msg.author.id === "435508604489957377") {
         // mendel
         msg.reply(lesson(1, "b", "a", "b", "a", 1));
-      } else if (msg.author.id === "801106605658865705") {
+      }
+      if (msg.author.id === "801106605658865705") {
         // daniel
         msg.reply(lesson(1, "b", "b", "b", "a", 1));
-      } else if (msg.author.id === "807289297836834907") {
-        msg.reply(lesson(1, "b", "b", "b", "a", 1));
+      }
+      if (msg.author.id === "807289297836834907") {
+        msg.reply(lesson(1, "a", "a", "a", "a", 1));
       }
       // if (args[1] === "gr1")
     }
