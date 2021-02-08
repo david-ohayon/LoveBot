@@ -93,7 +93,7 @@ const lesson = (
         return `${lessons.torah_dov} :תנ"ך הרב דב`;
       } else if (hours >= "13:15" && hours < "14:0") {
         if (english_group === "a") {
-          return `${lessons.english_nakar} :אנגלית(5-א) נקאר מרים`;
+          return `${lessons.english_nakar} :אנגלית(5-א) נקאר מרים asdsaf`;
         } else if (english_group === "b") {
           `${lessons.english_nourit} :אנגלית(5-ב) פריד נורית`;
         }
