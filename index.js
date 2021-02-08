@@ -180,7 +180,7 @@ client.on("message", (msg) => {
     }
 
     if (cmd === "lesson" || cmd === "class" || cmd === "שיעור") {
-      if (msg.author.id === "448837722778632192") {
+      if (msg.author.id === "807289297836834907") {
         // david
         msg.reply("a" + lesson(1, "a", "a", "a", "a", 1));
       }
