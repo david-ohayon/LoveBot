@@ -182,18 +182,18 @@ client.on("message", (msg) => {
     if (cmd === "lesson" || cmd === "class" || cmd === "שיעור") {
       if (msg.author.id === "807289297836834907") {
         // david
-        msg.reply("a" + lesson(1, "a", "a", "a", "a", 1));
+        msg.reply(lesson(1, "a", "a", "b", "a", 1));
       }
       if (msg.author.id === "435508604489957377") {
         // mendel
-        msg.reply(lesson("a" + 1, "b", "a", "b", "a", 1));
+        msg.reply(lesson(1, "b", "a", "b", "a", 1));
       }
       if (msg.author.id === "801106605658865705") {
         // daniel
-        msg.reply(lesson("a" + 1, "b", "b", "b", "a", 1));
+        msg.reply(lesson(1, "b", "b", "b", "a", 1));
       }
       if (msg.author.id === "807289297836834907") {
-        msg.reply(lesson("a" + 1, "a", "a", "b", "a", 1));
+        msg.reply(lesson(1, "a", "a", "b", "a", 1));
       }
       // if (args[1] === "gr1")
     }
