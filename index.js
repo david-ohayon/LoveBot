@@ -77,7 +77,7 @@ const lesson = (
     case "Monday":
       if (hours >= "08:30" && hours < "10:15") {
         if (grade === 1) {
-          return `${lessons.gemara} :תלמוד`;
+          return `${lessons.gemara} :תלמוד sdknf'sanglkn`;
         } else if (grade === 2) {
           return ``;
         }
