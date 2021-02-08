@@ -77,7 +77,7 @@ const lesson = (
     case "Monday":
       if (hours >= "08:30" && hours < "10:15") {
         if (grade === 1) {
-          return `${lessons.gemara} :תלמוד sdknf'sanglkn`;
+          return `${lessons.gemara} :תלמוד`;
         } else if (grade === 2) {
           return ``;
         }
@@ -174,7 +174,7 @@ client.on("message", (msg) => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
     if (cmd === "lessons" || cmd === "classes" || cmd === "שיעורים") {
-      msg.channel.send("pong");
+      msg.channel.send(`${day} ${hours}`);
     }
 
     if (cmd === "lesson" || cmd === "class" || cmd === "שיעור") {
