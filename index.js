@@ -76,7 +76,7 @@ const lesson = (grade, sunday_group, tuesday_group, english_group) => {
         }
       } else if (hours >= "10:15" && hours < "11:15") {
         if (grade === 1) {
-          return `${lessons.history_itsik} היסטוריה הרב שמש:`;
+          return `${lessons.history_itsik} :היסטוריה הרב שמש`;
         } else if (grade === 2) {
           return;
         }
@@ -144,9 +144,6 @@ client.on("message", (msg) => {
     msg.channel.id === "806946043899936799" ||
     msg.channel.id === "807571643546992692"
   ) {
-    if (msg.content === "ping") {
-      msg.reply("Pong!");
-    }
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
     if (cmd === "lessons" || cmd === "classes" || cmd === "שיעורים") {
