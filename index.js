@@ -187,6 +187,8 @@ client.on("message", (msg) => {
       } else if (msg.author.id === "801106605658865705") {
         // daniel
         msg.reply(lesson(1, "b", "b", "b", "a", 1));
+      } else if (msg.author.id === "807289297836834907") {
+        msg.reply(lesson(1, "b", "b", "b", "a", 1));
       }
       // if (args[1] === "gr1")
     }
