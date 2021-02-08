@@ -13,7 +13,7 @@ const prefix = "!";
 const day = dayjs().format("dddd");
 const date = new Date();
 // const hours = dayjs().format("HH:mm");
-const hours = date.toLocaleTimeString(navigator.language, {
+const hours = date.toLocaleTimeString([], {
   hour: "2-digit",
   minute: "2-digit",
 });
