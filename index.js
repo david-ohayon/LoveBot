@@ -11,7 +11,12 @@ const prefix = "!";
 
 // get which current lesson there is
 const day = dayjs().format("dddd");
-const hours = dayjs().format("HH:mm");
+const date = new Date();
+// const hours = dayjs().format("HH:mm");
+const hours = date.toLocaleTimeString(navigator.language, {
+  hour: "2-digit",
+  minute: "2-digit",
+});
 const lesson = (
   grade,
   sunday_group,
