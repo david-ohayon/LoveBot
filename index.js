@@ -24,6 +24,8 @@ const lesson = (
   // sunday_group - kapsula be rishon
   // tuesday_group - kapsula be shlishi
   // english_group - nakar / nourit
+  // option - physics/chemistry/economy
+  // cs - computer science
   switch (day) {
     //sunday
     case "Sunday":
@@ -94,7 +96,7 @@ const lesson = (
       } else if (hours >= "13:15" && hours < "14:0") {
         if (english_group === "a") {
           return `${lessons.english_nakar} :אנגלית(5-א) נקאר מרים`;
-        } else if (english_group === "b") {
+        } else {
           `${lessons.english_nourit} :אנגלית(5-ב) פריד נורית`;
         }
       } else if (hours >= "16:00" && hours <= "18:40") {
@@ -180,18 +182,18 @@ client.on("message", (msg) => {
     if (cmd === "lesson" || cmd === "class" || cmd === "שיעור") {
       if (msg.author.id === "448837722778632192") {
         // david
-        msg.reply(lesson(1, "a", "a", "a", "a", 1));
+        msg.reply("a" + lesson(1, "a", "a", "a", "a", 1));
       }
       if (msg.author.id === "435508604489957377") {
         // mendel
-        msg.reply(lesson(1, "b", "a", "b", "a", 1));
+        msg.reply(lesson("a" + 1, "b", "a", "b", "a", 1));
       }
       if (msg.author.id === "801106605658865705") {
         // daniel
-        msg.reply(lesson(1, "b", "b", "b", "a", 1));
+        msg.reply(lesson("a" + 1, "b", "b", "b", "a", 1));
       }
       if (msg.author.id === "807289297836834907") {
-        msg.reply(lesson(1, "a", "a", "b", "a", 1));
+        msg.reply(lesson("a" + 1, "a", "a", "b", "a", 1));
       }
       // if (args[1] === "gr1")
     }
