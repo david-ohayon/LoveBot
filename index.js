@@ -11,8 +11,7 @@ const prefix = "!";
 
 // get which current lesson there is
 const day = dayjs().format("dddd");
-const hours = `${parseInt(dayjs.format("HH")) + 2}${dayjs().format("mm")}`;
-// const hours = dayjs().format("HH:mm");
+const hours = `${parseInt(dayjs().format("HH")) + 2}${dayjs().format("mm")}`;
 const lesson = (
   grade,
   sunday_group,
