@@ -142,7 +142,7 @@ client.on("message", (msg) => {
 
   if (
     msg.channel.id === "806946043899936799" ||
-    msg.channel.id === "806978215955398669"
+    msg.channel.id === "807571643546992692"
   ) {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
