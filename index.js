@@ -10,8 +10,6 @@ const client = new Discord.Client();
 const prefix = "!";
 
 // get which current lesson there is
-let day = dayjs().format("dddd");
-let hours = `${parseInt(dayjs().format("HH")) + 2}:${dayjs().format("mm")}`;
 const lesson = (
   grade,
   sunday_group,
@@ -20,6 +18,8 @@ const lesson = (
   option,
   cs
 ) => {
+  const day = dayjs().format("dddd");
+  const hours = `${parseInt(dayjs().format("HH")) + 2}:${dayjs().format("mm")}`;
   // grade - kita
   // sunday_group - kapsula be rishon
   // tuesday_group - kapsula be shlishi
